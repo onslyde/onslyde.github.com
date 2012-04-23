@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      onslyde.com
+    </title>
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type' />
+
+  </head>
+  <body style="text-align: center">
+    <img src="images/logos.png"  />
+    <p>Real time audience feedback</p>
+    <p><a href="mailto:wesleyhales@gmail.com">Contact</a></p>
+
+    <script type='text/javascript'>
+      //<![CDATA[
+
+        // my custom JS
+
+        //get a request pramaeter
+        function getParameterByName(name) {
+          var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+          return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+        }
+
+        //reckless abandon - adding querySelector as an option to getElementById
+        var orig = document.getElementById;
+        document.getElementById = function(){
+          if (document.querySelector){
+              return document.querySelector('#' + arguments[0]);
+          }else{
+              return orig(arguments[0]);
+          }
+        };
+
+      //]]>
+    </script>
+
+  </body>
+</html>
